@@ -9,11 +9,8 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
-const corsOption = {
-    origin: process.env.CORS_ORIGIN
-}
 
-app.use(cors(corsOption))
+app.use(cors())
 
 app.get('/', async (req, res) => {
     try {
